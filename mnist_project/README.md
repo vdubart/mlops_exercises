@@ -1,7 +1,7 @@
-mnist_project
+TestCookie
 ==============================
 
-First cookieecutter projeect
+Test cookiecutter
 
 Project Organization
 ------------
@@ -12,8 +12,8 @@ Project Organization
     ├── data
     │   ├── external       <- Data from third party sources.
     │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── processed      <- The final, canonical data sets for modeling (.pt files).
+    │   └── raw            <- The original, immutable data dump (.npz files).
     │
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
@@ -37,12 +37,14 @@ Project Organization
     │   │
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
+    │   │   └── make_examples.py
     │   │
     │   ├── features       <- Scripts to turn raw data into features for modeling
     │   │   └── build_features.py
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
+    │   │   ├── model.py
     │   │   ├── predict_model.py
     │   │   └── train_model.py
     │   │

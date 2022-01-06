@@ -1,6 +1,13 @@
 # local package
 -e .
 
+numpy
+matplotlib
+scikit-learn
+torch
+torchvision
+torchaudio
+
 # external requirements
 click
 Sphinx
