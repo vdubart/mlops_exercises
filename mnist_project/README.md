@@ -1,7 +1,7 @@
-TestCookie
+mnist_project
 ==============================
 
-Test cookiecutter
+First cookiecutter project
 
 Project Organization
 ------------
