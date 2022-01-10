@@ -52,8 +52,6 @@ def mnist(batch_size):
  
     from project_path import PROJECT_PATH
 
-    print(PROJECT_PATH)
-
     trainset = CustomImageDataset(filepath=str(PROJECT_PATH)+"/data/processed/train_0")
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True)
 
