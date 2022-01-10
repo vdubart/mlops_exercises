@@ -9,7 +9,6 @@ from dotenv import find_dotenv, load_dotenv
 from torch.utils.data import Dataset
 from torchvision import transforms
 
-
 @click.command()
 @click.argument("input_filepath", type=click.Path(exists=True))
 @click.argument("output_filepath", type=click.Path())
@@ -48,13 +47,18 @@ class CustomImageDataset(Dataset):
         return image, label
 
 
-def mnist():
+def mnist(batch_size):
     # exchange with the corrupted mnist dataset
-    trainset = CustomImageDataset(filepath="data/processed/train_0")
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
+ 
+    from project_path import PROJECT_PATH
 
-    testset = CustomImageDataset(filepath="data/processed/test")
-    testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)
+    print(PROJECT_PATH)
+
+    trainset = CustomImageDataset(filepath=str(PROJECT_PATH)+"/data/processed/train_0")
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True)
+
+    testset = CustomImageDataset(filepath=str(PROJECT_PATH)+"/data/processed/test")
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=True)
 
     return trainloader, testloader
 

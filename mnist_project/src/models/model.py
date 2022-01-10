@@ -3,12 +3,12 @@ from torch import nn
 
 
 class MyAwesomeModel(nn.Module):
-    def __init__(self):
+    def __init__(self, input_dim, hidden_dim1, hidden_dim2, hidden_dim3, output_dim):
         super().__init__()
-        self.fc1 = nn.Linear(784, 256)
-        self.fc2 = nn.Linear(256, 128)
-        self.fc3 = nn.Linear(128, 64)
-        self.fc4 = nn.Linear(64, 10)
+        self.fc1 = nn.Linear(input_dim, hidden_dim1)
+        self.fc2 = nn.Linear(hidden_dim1, hidden_dim2)
+        self.fc3 = nn.Linear(hidden_dim2, hidden_dim3)
+        self.fc4 = nn.Linear(hidden_dim3, output_dim)
 
         # Dropout module with 0.2 drop probability
         self.dropout = nn.Dropout(p=0.2)
