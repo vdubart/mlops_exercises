@@ -1,0 +1,21 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-01-12T14:18:09.457221",
+    "startedAt": "2022-01-12T14:18:07.505006",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "src/models/train_model.py",
+    "git": {
+        "remote": "https://github.com/vdubart/mlops_exercises.git",
+        "commit": "1310477148bc86fb2065de830077ed3cc46a7682"
+    },
+    "email": "dubartvictor@gmail.com",
+    "root": "/Users/victor/Desktop/mlops_exercises",
+    "host": "dubart",
+    "username": "victor",
+    "executable": "/Users/victor/opt/anaconda3/envs/mlops/bin/python"
+}

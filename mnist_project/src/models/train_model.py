@@ -6,10 +6,14 @@ from src.data.make_dataset import mnist
 from src.models.model import MyAwesomeModel
 
 import hydra
+import wandb
+
 
 @hydra.main(config_path="", config_name='config.yaml')
 def train(cfg):
     print("Training day and night")
+
+    wandb.init()
 
     hparams_model = cfg.hparams_model
     hparams_training = cfg.hparams_training
@@ -24,6 +28,9 @@ def train(cfg):
                            hparams_model['hidden_dim2'],
                            hparams_model['hidden_dim3'],
                            hparams_model['output_dim'])
+
+    wandb.watch(model, log_freq=100)
+
     model.train()
     train_set, _ = mnist(hparams_training['batch_size'])
     optimizer = torch.optim.Adam(model.parameters(), lr=hparams_training['lr'])
@@ -50,6 +57,9 @@ def train(cfg):
             "Epoch: {}/{}.. ".format(e + 1, epochs),
             "Training Loss: {:.3f}.. ".format(train_losses[-1]),
         )
+        wandb.log({"training loss": train_losses})
+    
+    wandb.log({"examples" : [wandb.Image(im) for im in images]})
 
     from project_path import PROJECT_PATH
 
