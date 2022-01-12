@@ -47,7 +47,7 @@ class CustomImageDataset(Dataset):
         return image, label
 
 
-def mnist(batch_size):
+def mnist(batch_size=64):
     # exchange with the corrupted mnist dataset
  
     from project_path import PROJECT_PATH
